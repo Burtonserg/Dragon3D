@@ -15,7 +15,7 @@ public class Player2 : MonoBehaviour
             tail.transform.rotation = transform.rotation;
             
             tail.target = current.transform;
-            
+
             tail.targetDistance = 2;
             
             Destroy(tail.GetComponent<Collider>());
@@ -27,16 +27,16 @@ public class Player2 : MonoBehaviour
     }    
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 2);
+        transform.Translate(Vector3.forward * Time.deltaTime * 10);
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.back);
+            transform.Rotate(Vector3.up);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.down);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
