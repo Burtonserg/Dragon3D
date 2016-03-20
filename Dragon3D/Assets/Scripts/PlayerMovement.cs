@@ -14,22 +14,22 @@ public class PlayerMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.back);
+            transform.Rotate(Vector3.up);
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.down);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.Rotate(Vector3.right);
+            transform.Rotate(Vector3.left);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.Rotate(Vector3.left);
+            transform.Rotate(Vector3.right);
         }
 	}
 }
