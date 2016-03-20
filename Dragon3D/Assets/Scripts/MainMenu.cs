@@ -3,20 +3,12 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
     // Размер меню
     public Vector2 menuSize = new Vector2(500, 300);
 
     // минимальная высота кнопки
-    public float buttonMinHeight = 40f;
+    public float buttonMinHeight = 60f;
 
     // шрифт заголовка
     public Font captionFont;
@@ -31,8 +23,6 @@ public class MainMenu : MonoBehaviour {
 
     public void OnGUI()
     {
-        // тут отрисовка
-        // рассчитываем прямоугольник по центру экрана с заданным размером
         Rect rect = new Rect(
             Screen.width / 2f - menuSize.x / 2,
             Screen.height / 2f - menuSize.y / 2,
@@ -42,18 +32,18 @@ public class MainMenu : MonoBehaviour {
         // область меню
         GUILayout.BeginArea(rect, GUI.skin.textArea);
         {
-            // создаем стиль заголовка на основе стиля label стандартного скина
+            // стиль заголовка
             GUIStyle captionStyle = new GUIStyle(GUI.skin.label);
-            // устанавливаем стилю заголовка шрифт captionFont
-          //  captionStyle.font = captionFont;
+            // шрифт заголовка (captionFont)
+            captionStyle.font = captionFont;
             // Рассположение текста по центру
             captionStyle.alignment = TextAnchor.MiddleCenter;
 
-            // текст заголовка (отрисовка)
+            // текст заголовка 
             GUILayout.Label(mainMenuText, captionStyle);
-            // создаем стиль кнопки на основе стиля button стандартного скина
+            // стиль кнопки
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-            // устанавливаем стилю кнопки шрифт buttonFont
+            // шрифт кнопок (buttonFont)
             buttonStyle.font = buttonFont;
             // отступы кнопок от краев
             buttonStyle.margin = new RectOffset(100, 100, 3, 3);
@@ -67,8 +57,8 @@ public class MainMenu : MonoBehaviour {
             // отрисовка кнопки Start и обработка ее нажатия
             if (GUILayout.Button(startButtonText, buttonStyle, GUILayout.MinHeight(buttonMinHeight)))
             {
-                // загрузка сцены с именем Level
-                Application.LoadLevel("Level");
+                // загрузка сцены с именем Game
+                Application.LoadLevel("game");
             }
 
             GUILayout.FlexibleSpace(); // динамическоем пространство между кнопками
