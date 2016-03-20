@@ -5,7 +5,7 @@ public class Player2 : MonoBehaviour
     void Start()
     {
         Transform current = transform;
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
             
             tail tail = GameObject.CreatePrimitive(PrimitiveType.Cube).AddComponent<tail>();            
